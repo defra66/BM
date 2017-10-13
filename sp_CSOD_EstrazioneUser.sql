@@ -1054,11 +1054,6 @@ begin
 			) s2 on s2.N_RIFERIMENTO = s1.N_RIFERIMENTO and s2.DT_INIZIO = s1.DT_INIZIO
 		) iter on iter.N_RIFERIMENTO = aca.N_CANDIDATO
 		where aca.FLG_ANNULLATO = 'N'
-		--
-		-- Origine candidato = 'CSOD_CANDIDATI' implica gestione Candidati su CORNERSTONE
-		-- Quindi non serve inviare alcuna informazione
-		--
-		and isNull(aca.ORIGINE_CANDIDATO, '') <> 'CSOD_CANDIDATI'
 	) cand
 
 
